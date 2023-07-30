@@ -31,6 +31,18 @@ We have implemented the basic idea HEG(parallel_sparse_rr.py) in python,Block-ba
 
 All datasets can be downloaded through dgl and ogb,you can adjust the required dataset through the dataset parameters and automatically download it.
 
+## Environment
+
+Our code runs on Linux 18.04, with a hardware environment of CPU: Intel Xeon Processor (Skylake, IBRS), and GPU: NVIDIA Tesla V100.
+
+Python>=3.8
+
+dgl>=0.8
+
+pytorch>=1.10
+
+cuda>=10
+
 ## How to run
 
 ### Run the demo
