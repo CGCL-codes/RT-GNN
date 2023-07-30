@@ -11,7 +11,7 @@ We propose RT-GNN, a novel framework for accelerating GNNs through the fusion of
 ## HEG Representation
 
 <div align=center>
-<img src="https://github.com/CGCL-codes/RT-GNN/blob/main/imgs/HEG.png" width="600" height="280" alt="HEG Representation"/><br/>
+<img src="https://github.com/CGCL-codes/RT-GNN/blob/main/imgs/HEG.png" width="400" height="280" alt="HEG Representation"/><br/>
 </div>
 
 
@@ -20,7 +20,7 @@ To effectively reduce redundant computing, RT-GNN introduces redundancy eliminat
 ## Block-based Row-wise Multiplication
 
 <div align=center>
-<img src="https://github.com/CGCL-codes/RT-GNN/blob/main/imgs/Fuser.png" width="600" height="280" alt="Block-based Row-wise Multiplication"/><br/>
+<img src="https://github.com/CGCL-codes/RT-GNN/blob/main/imgs/Fuser.png" width="400" height="280" alt="Block-based Row-wise Multiplication"/><br/>
 </div>
 
 The irregular aggregation computation for SpMM lead to high memory usage, and low data reuse.So we propose block-based row-wise multiplication approach and Fuser to compute GNN models, in order to exploit the graph data locality and cores execution opportunity. Fuser dynamically combines the Tensor and CUDA Cores. The fundamental building block in our proposal is graph tile, which divides a graph into smaller blocks, a.k.a., tiles.
