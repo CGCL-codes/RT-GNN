@@ -1,1 +1,11 @@
-# RT-GNN
+# RT-GNN: Accelerating Sparse Graph Neural Networks by Tensor-CUDA Kernel Fusion
+
+RT-GNN is a block-based row-wise multiplication approach with redundancy elimination. Firstly, we construct HEG, a novel graph representation that eliminates redundancy in GNNs through a greedy search. Secondly, to improve data locality and reuse during the training and inference, we propose block-based row-wise multiplication to alleviate memory constraints and benefit from advanced hardware. Finally, we propose Fuser to parallelize TC and CD by fusing kernels based on different computation paradigms in GNNs.
+
+## Introduction
+
+Graph Neural Networks (GNNs) have achieved remarkable successes in various graph learning tasks, thanks to their ability to leverage advanced GPUs. However, GNNs currently face challenges with concurrent use of advanced Tensor Cores (TCs) and CUDA Cores (CDs) in GPUs. These challenges arise due to repeated redundant computations and inefficient data locality that result from the large size, high sparsity, and irregular non-zero distribution of real-world graphs.
+
+We propose RT-GNN, a novel framework for accelerating GNNs through the fusion of advanced TC and CD cores. A hierarchical embedding graph (HEG) is introduced to efficiently eliminates redundant computation. By characterizing the redundancy through the use of adjacency matrix properties, HEG outperforms traditional approaches obviously. We also present a block-based row-wise multiplication method that addresses the inherent sparsity of graphs. HEG is divided into small blocks (a.k.a tiles) to make better use of the 
+
+/CD hardware and maximize reuse of feature and result matrices. Further, an adaptive architecture Fuser is proposed to deploy different types of tiles from HEG into TC and CD units according to their sparsity after a lightweight graph reordering, allowing efficient parallel processing. Experimental results demonstrate that RT-GNN outperforms HAG by an average of 19.25×, with a remarkable 72× improvement on the ARXIV dataset for redundancy elimination. Moreover, for overall performance RT-GNN outperforms state-of-the-art GNN computing frameworks by an average of 3.31×, with a notable 3.57× improvement in comparison to TC-GNN.
