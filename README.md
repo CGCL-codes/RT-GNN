@@ -11,7 +11,7 @@ We propose RT-GNN, a novel framework for accelerating GNNs through the fusion of
 ## HEG Representation
 
 <div align=center>
-<img src="https://github.com/CGCL-codes/RT-GNN/blob/main/imgs/HEG.png" width="500" height="280" alt="HEG Representation"/><br/>
+<img src="https://github.com/CGCL-codes/RT-GNN/blob/main/imgs/HEG.png" width="500" height="290" alt="HEG Representation"/><br/>
 </div>
 
 
