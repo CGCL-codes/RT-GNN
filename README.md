@@ -27,7 +27,7 @@ The irregular aggregation computation for SpMM lead to high memory usage, and lo
 
 ## About the source code and data sets
 
-We have implemented the basic idea HEG(parallel_sparse_rr.py) in python,Block-based Row-wise Multiplication(GCNFusion_V100.cu) in cuda.
+We have implemented the basic idea HEG(parallel_sparse_rr.py) in python,Block-based Row-wise Multiplication (GCNFusion_V100.cu) in cuda.
 
 All datasets can be downloaded through dgl and ogb,you can adjust the required dataset through the dataset parameters and automatically download it.
 
