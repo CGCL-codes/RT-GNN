@@ -24,3 +24,35 @@ To effectively reduce redundant computing, RT-GNN introduces redundancy eliminat
 </div>
 
 The irregular aggregation computation for SpMM lead to high memory usage, and low data reuse.So we propose block-based row-wise multiplication approach and Fuser to compute GNN models, in order to exploit the graph data locality and cores execution opportunity. Fuser dynamically combines the Tensor and CUDA Cores. The fundamental building block in our proposal is graph tile, which divides a graph into smaller blocks, a.k.a., tiles.
+
+## About the source code and data sets
+
+We have implemented the basic idea HEG(parallel_sparse_rr.py) in python,Block-based Row-wise Multiplication(GCNFusion_V100.cu) in cuda.
+
+All datasets can be downloaded through dgl and ogb,you can adjust the required dataset through the dataset parameters and automatically download it.
+
+## How to run
+
+### Run the demo
+
+Suppose you've already cloned the repository.  
+You just need:
+
+```
+    $ cd src/fusion && python setup.py develop
+    $ cd src/partition_sparse_rr && python setup.py develop 
+```
+
+### Parameter setting
+
+```
+   --dataset:name of dgl dataset
+   --epoch:epochs number
+   --embed:embedding_dim number
+   --k:number of graph patition if --preprocess
+   --round:total number of rounds to perform reduction if --preprocess
+   --num_layers:total number of GNN layers
+   --preprocess:Preprocessing or not
+```
+
+## 
